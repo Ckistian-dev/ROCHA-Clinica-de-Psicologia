@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ROCHA Clínica de Psicologia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Spectral+SC&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200..700&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=VT323&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #cce7e5;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #267066;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            font-family: "Roboto", serif;
+            font-weight: 500;
+            
+        }
+
+            nav ul {
+                display: flex;
+                margin: 0;
+                padding: 0;
+                flex-direction: row;
+                list-style: none;
+                margin-left: auto;
+            }
+
+                nav ul.active {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 55px;
+                    right: 20px;
+                    background-color: #267066;
+                    padding: 10px;
+                    border-radius: 10px;
+                    align-items: center;
+                    width: 250px;
+                    height: auto;
+                    max-height: 400px;
+                }
+
+                    nav ul.active li {
+                        padding: 10px;
+                        color: white;
+                        width: 100%;
+                        text-align: center;
+                        border-bottom: 1px solid white;
+                    }
+
+                    nav ul.active li:last-child {
+                        border-bottom: none;
+                    }
+
+                    nav ul li {
+                        margin: 0 20px;
+                    }
+
+                        nav ul li a {
+                            color: #ffffff;
+                            text-decoration: none;
+                            font-size: 1em;
+                            transition: color 0.3s ease, transform 0.3s ease;
+                        }
+
+                            nav ul li a:hover {
+                                color: #9c9c9c;
+                                transform: scale(1.1);
+                            }
+
+            .logo-text {
+                font-family: "Oswald", serif;
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+            }
+
+                .logo-text .rocha {
+                    color: #004848;
+                    font-size: 1.5em;
+                }
+
+                .logo-text .clinica {
+                    color: #f0f4f3;
+                    font-size: 1em;
+                    margin-left: 5px;
+                }
+
+                .logo-text img {
+                    width: 50px;
+                    height: auto;
+                    margin-right: 10px;
+                }
+
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 25px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+            .hamburger-menu div {
+                background-color: #f0f4f3;
+                height: 3px;
+                border-radius: 3px;
+            }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                width: 100%;
+                justify-content: center;
+                margin: 0;
+            }
+
+                .logo-text {
+                font-size: 1rem;
+                }
+
+                    nav ul li {
+                        margin: 0.5rem 0;
+                    }
+
+            .hamburger-menu {
+                display: flex;
+            }
+        }
+
+
+        header {
+            background-image: url('https://i.ibb.co/NZvSwYw/51d56ae6-95f4-4dc7-82fd-a2ab0503bf3d.jpg');
+            background-size: cover;
+            background-position: center;    
+            display: flex;
+            align-items: center;  /* Alinha os itens no centro verticalmente */
+            justify-content: center; /* Alinha os itens no centro verticalmente */
+            padding: 10rem 2rem;
+        }
+
+
+            header img {
+                height: 400px;
+                padding: 0; /* Remover o padding pode permitir que a borda arredondada apareça corretamente */
+                border-radius: 10px; /* Mantém o efeito de borda arredondada */
+                max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+                align-items: center;
+                margin-right: 3rem;
+                margin-top: 3rem;
+                filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.5));
+            }
+
+            /* Estilo do texto à direita */
+            header .text {
+                max-width: 40%; /* Limita a largura do texto */
+                text-align: center;  /* Centraliza o texto */
+                align-items: center;
+                margin-left: 3rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            header h2 {
+                font-size: 5rem;
+                color: #cce7e5;
+            }
+
+            header p {   
+                font-size: 1.1rem;
+                color: #f0f4f3;
+                line-height: 1.6;
+            }
+
+
+        footer {
+            background-color: #267066;
+            text-align: center;
+            padding: 20px;
+        }
+
+            footer p {
+                color: #f0f4f3;
+            }
+
+
+        /* Botão WhatsApp flutuante */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px; /* Ajuste a distância do fundo aqui */
+            right: 20px;
+            background-color: #25D366;
+            border-radius: 50%;
+            padding: 20px; /* Tamanho maior do botão */
+            font-size: 2.5rem;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: background-color 0.3s ease;
+            width: 60px; /* Ajuste o tamanho para garantir um formato circular perfeito */
+            height: 60px; /* Ajuste o tamanho para garantir um formato circular perfeito */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none; /* Remover sublinhado do link */
+        }
+
+            /* Ajuste para o ícone dentro do botão */
+            .whatsapp-btn i {
+                font-size: 2.5rem; /* Tamanho do ícone */
+            }
+
+            /* Efeito de hover */
+            .whatsapp-btn:hover {
+                background-color: #128C7E;
+            }
+
+        /* Animação de rolagem suave */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 0;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+
+<!-- Botão WhatsApp -->
+<a href="https://wa.me/554591068514?text=Olá!%20Tenho%20interesse%20em%20seu%20trabalho." target="_blank" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i> <!-- Ícone do WhatsApp -->
+</a>
+
+
+<!-- Navegação -->
+<nav>
+    <div class="logo-text">
+        <img src="https://i.ibb.co/4d6Hd5x/logo-rocha1.png" alt="Logo">
+        <h1>
+            <span class="rocha">ROCHA</span>
+            <span class="clinica">Clínica de Psicologia</span>
+        </h1>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <ul>
+        <li><a href="#Inicio">Início</a></li>
+        <li><a href="#sobre">Principal</a></li>
+        <li><a href="#servicos">Matérias</a></li>
+        <li><a href="#portfolio">Comentários</a></li>
+        <li><a href="#contato">Sobre mim</a></li>
+        <li><a href="#contato">Agendamento</a></li>
+    </ul>
+</nav>
+
+<!-- Header -->
+<header id="Inicio" class="Inicio">
+    <div class="image">
+        <img src="https://i.ibb.co/M58zPxy/logo-rocha2.png" alt="logo-rocha2" alt="Imagem logo">
+    </div>
+    <div class="text">
+        <h2>PSICOTERAPIA</h2>
+        <p>"Psicoterapia é um investimento valioso em si mesmo, que promove autoconhecimento, desenvolvimento emocional e ferramentas para melhorar suas interações sociais, profissionais e familiares, trazendo mais equilíbrio e satisfação à sua vida."</p>
+    </div>
+</header>
+
+
+<!-- Rodapé -->
+<footer>
+    <p>&copy; 2025 SitesByCkistian | Todos os direitos reservados</p>
+</footer>
+
+<script>
+
+    function toggleMenu() {
+        const menu = document.querySelector('nav ul');
+        menu.classList.toggle('active');
+    }
+
+</script>
+
+</body>
+</html>
