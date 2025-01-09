@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ROCHA Clínica de Psicologia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Spectral+SC&display=swap" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Spectral+SC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +41,7 @@
             padding: 10px 10px;
             font-family: "Roboto", serif;
             font-weight: 500;
+            white-space: nowrap;
             
         }
 
@@ -142,7 +143,10 @@
             display: flex;
             align-items: center;  /* Alinha os itens no centro verticalmente */
             justify-content: center; /* Alinha os itens no centro verticalmente */
-            padding: 8rem 2rem;
+            width: 100vw; /* Largura máxima da tela */
+            min-height: 100vh; /* Altura mínima para preencher a tela */
+            margin: 0; /* Remove margens */
+            overflow: hidden; /* Garante que nada transborde */
         }
 
 
@@ -180,22 +184,63 @@
         /* Container Principal */
         .principal {
             font-family: 'Arial', sans-serif;
-            margin: 30px auto;
             padding: 20px;
-            max-width: 900px;
-            background-color: #fff;
+            max-width: 1000px;
+            background-color: #ffffff;
             border-radius: 15px;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
         }
 
-            /* Notícia/Post */
-            .noticia .post {
-                background-color: #f5f8fa;
-                padding: 15px;
-                border-radius: 10px;
-                box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
-                text-align: justify;
+            .carousel-container {
+                position: relative;
+                max-width: 1000px;
+                margin: 30px auto;
+                overflow: hidden;
+                background-color: #ffffff00;
+                border-radius: 15px;
             }
+
+                .carousel {
+                    display: flex;
+                    transition: transform 0.5s ease-in-out;
+                }
+
+                .carousel-item {
+                    min-width: 100%;
+                    box-sizing: border-box;
+                }
+
+                .carousel-arrow {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 2rem;
+                    color: #c9c6c6;
+                    background-color: rgba(255, 255, 255, 0);
+                    border: none;
+                    cursor: pointer;
+                    z-index: 10;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                }
+
+                .left-arrow {
+                    left: 10px;
+                }
+
+                .right-arrow {
+                    right: 10px;
+                }
+
+                .carousel-arrow:hover {
+                    color: #717171;
+                    background: rgba(0, 0, 0, 0);
+                }
+
 
                 .post-header {
                     display: flex;
@@ -250,6 +295,7 @@
                     padding: 0;
                     border-radius: 10px;
                     max-width: 100%;
+                    max-height: auto;
                     justify-content: center;
                 }
 
@@ -379,7 +425,181 @@
                         color: #333;
                     }
 
-        
+            /* Seção de Matérias */
+            .materias-section {
+                background-color: #f9f9f9;
+                padding: 4rem 2rem;
+                text-align: center;
+            }
+
+            /* Estilo para o título */
+            .materias-section h2 {
+                font-family: "Oswald", serif;
+                font-size: 2.5rem;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 2rem;
+                color: #333; /* Cor principal */
+                text-transform: uppercase;
+                letter-spacing: 2px; /* Espaçamento entre letras */
+                position: relative;
+                display: inline-block;
+                background: linear-gradient(90deg, #267066, #004848);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            /* Linha decorativa abaixo do título */
+            .materias-section h2::after {
+                text-align: center;
+                content: "";
+                position: absolute;
+                width: 255%;
+                height: 4px;
+                background: linear-gradient(90deg, #267066, #004848);
+                bottom: -10px;
+                left: -77.5%;
+                border-radius: 2px;
+            }
+
+            .materias-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 24px;
+                margin: 0 auto;
+                max-width: 1200px;
+            }
+
+            .materia-link {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .materia {
+                background: #fff;
+                border-radius: 12px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.3s, box-shadow 0.3s;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .materia:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            }
+
+            .materia-img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+                display: block;
+            }
+
+            .materia-content {
+                padding: 1.5rem;
+                text-align: left;
+            }
+
+            .materia-content h3 {
+                font-size: 1.5rem;
+                color: #444;
+                margin-bottom: 0.75rem;
+            }
+
+            .materia-content p {
+                font-size: 1rem;
+                color: #666;
+                line-height: 1.6;
+            }
+
+        /* Seção de Comentários */
+        #ComentariosClientes {
+            background-color: #f7f7f7; /* Cor de fundo suave */
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+            .comentarios-container {
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .comentarios-container h2 {
+                font-family: "Oswald", serif;
+                font-size: 2.5rem;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 2rem;
+                color: #333; /* Cor principal */
+                text-transform: uppercase;
+                letter-spacing: 2px; /* Espaçamento entre letras */
+                position: relative;
+                display: block; /* Certifica que o título ocupe a largura total disponível */
+                background: linear-gradient(90deg, #267066, #004848);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+                /* Linha decorativa abaixo do título */
+                .comentarios-container h2::after {
+                    text-align: center;
+                    content: "";
+                    position: absolute;
+                    width: 100%; /* Ajusta a largura da linha para 100% da largura do título */
+                    height: 4px;
+                    background: linear-gradient(90deg, #267066, #004848);
+                    bottom: -10px;
+                    left: 0; /* Centraliza a linha no título */
+                    border-radius: 2px;
+                }
+
+            .comentario {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                background-color: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin-bottom: 30px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .comentario:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .comentario-avatar {
+                margin-right: 20px;
+            }
+
+            .comentario-conteudo {
+                max-width: 800px;
+                text-align: left;
+            }
+
+            .comentario-conteudo h3 {
+                font-size: 1.5rem;
+                color: #267066; /* Cor do nome do cliente */
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .comentario-conteudo p {
+                font-size: 1.1rem;
+                color: #7f8c8d; /* Cor do texto do comentário */
+                line-height: 1.6;
+                margin-bottom: 10px;
+            }
+
+            .comentario-conteudo .comentario-texto {
+                font-style: italic;
+                color: #34495e;
+            }
 
         footer {
             background-color: #267066;
@@ -447,25 +667,22 @@
                         margin: 0.5rem 0;
                     }
 
-            header {
-            padding: 18rem 2rem;
+
+            header .text {
+                display: none;
             }
 
-                header .text {
-                    display: none;
-                }
-
-                header img {
-                    height: 300px;
-                    margin-right: 0rem;
-                    margin-top: 0rem;
-                }
+            header img {
+                height: 300px;
+                margin-right: 0rem;
+                margin-top: 0rem;
+            }
 
             .hamburger-menu {
                 display: flex;
             }
 
-            .principal {
+            .carousel-container {
                 max-width: 95%;
             }
 
@@ -481,6 +698,56 @@
                     font-size: 10px; 
 
                 }
+
+                .materias-section h2::after {
+                width: 100%;
+                left: 0%;
+            }
+
+            .sumil {
+                display: none;
+            }
+
+            .left-arrow {
+                left: -10px;
+            }
+            .right-arrow {
+                right: -10px;
+            }
+
+            .arrow {
+                font-size: 1.5rem;
+                width: 40px;
+                height: 40px;
+            }
+
+            .comentario {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .comentarios-container {
+                max-width: 95%;
+            }
+
+                .comentarios-container h2 {
+                    text-align: center;
+                }
+
+                .comentarios-container h2::after {
+                    width: 100%;
+                    left: 0%;
+                }
+
+                .comentario-conteudo h3 {
+                    font-size: 1.3rem;
+                }
+
+                .comentario-conteudo p {
+                    font-size: 1rem;
+                }
+
         }
 
         /* Animação de rolagem suave */
@@ -496,7 +763,7 @@
         }
     </style>
 </head>
-<body class="dark-mode">
+<body>
 
 <!-- Botão WhatsApp -->
 <a href="https://wa.me/554598352369?text=Olá!%20Gostaria%20de%20marcar%20um%20horário." target="_blank" class="whatsapp-btn">
@@ -521,8 +788,8 @@
     <ul>
         <li><a href="#Inicio">Início</a></li>
         <li><a href="#Principal">Principal</a></li>
-        <li><a href="#servicos">Matérias</a></li>
-        <li><a href="#portfolio">Comentários</a></li>
+        <li><a href="#Materias">Matérias</a></li>
+        <li><a href="#Comentarios">Comentários</a></li>
         <li><a href="#contato">Sobre mim</a></li>
         <li><a href="#contato">Agendamento</a></li>
     </ul>
@@ -540,58 +807,264 @@
 </header>
 
 <!-- Principal -->
-<section id="Principal" class="principal">
-    <div class="noticia">
-        <div class="post">
-            <div class="post-header">
-                <img class="avatar" src="https://i.ibb.co/4d6Hd5x/logo-rocha1.png" alt="Avatar">
-                <div class="user-info">
-                    <span class="username">ROCHA Clínica de Psicologia ✅</span>
-                    <span class="post-arroba">@rocha_psicologia</span>
+<div class="carousel-container">
+    <button class="carousel-arrow left-arrow">‹</button>
+    <div class="carousel">
+        <div class="carousel-item">
+            <!-- Post 1 -->
+            <section id="Principal" class="principal">
+                <div class="noticia">
+                    <div class="post">
+                        <div class="post-header">
+                            <img class="avatar" src="https://i.ibb.co/4d6Hd5x/logo-rocha1.png" alt="Avatar">
+                            <div class="user-info">
+                                <span class="username">ROCHA Clínica de Psicologia ✅</span>
+                                <span class="post-arroba">@rocha_psicologia</span>
+                            </div>
+                            <i class="fas fa-ellipsis-h more-options"></i> <!-- Ícone de três pontos -->
+                        </div>
+                        <div class="post-content">
+                            <p1 class="content">🩺 Novembro Azul é o mês dedicado à conscientização sobre a saúde do homem, especialmente o câncer de próstata. Vamos lembrar da importância do cuidado preventivo e do diagnóstico precoce. O exame pode salvar vidas, e a saúde mental também deve ser uma prioridade durante esse processo. Cuide-se, converse sobre saúde e não tenha medo de buscar ajuda! 💙</p1>
+                            <p2 class="hashtag">#NovembroAzul #SaúdeDoHomem #CâncerDePróstata #Prevenção #Conscientização #Psicologia</p2>
+                        </div>
+                        <div class="post-image">
+                            <img class="post-img" src="https://www.gov.br/dnocs/pt-br/assuntos/noticias/novembro-azul-mes-de-conscientizacao-sobre-o-cancer-de-prostata/banner-site.jpg" alt="Imagem post">
+                        </div>
+                        <div class="post-info">
+                            <p1 class="time/date/views"> 10:30 AM  •  01/11/2024  •  1.5K Views</p1>
+                            <hr class="separator"> <!-- Linha horizontal separadora -->
+                            <p2 class="ret/com/cur/salv"> 92 Retweets  •  50 Comentários  •  110 Curtidas  •  9 Salvamentos</p2>
+                        </div>
+                        <hr class="separator"> <!-- Linha horizontal separadora -->
+                        <div class="actions">
+                            <div class="action-item">
+                                <span class="action-icon comment-icon"><i class="far fa-comment"></i></span> <!-- Comentário -->
+                            </div>
+                            <div class="action-item">
+                                <i class="fas fa-retweet retweet-icon"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="far fa-heart like-icon"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="far fa-bookmark save-icon"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="fas fa-share share-icon"></i>
+                            </div>
+                        </div>
+                        <div class="comment-section" style="display: none;">
+                            <textarea class="comment-box" placeholder="Escreva seu comentário..."></textarea>
+                            <button class="submit-comment">Comentar</button>
+                        </div>
+                        <div class="comments-display">
+                            <!-- Os comentários aparecerão aqui -->
+                        </div>
+                    </div>
                 </div>
-                <i class="fas fa-ellipsis-h more-options"></i> <!-- Ícone de três pontos -->
-            </div>
-            <div class="post-content">
-                <p1 class="content">🧠 Janeiro é um mês importante para refletirmos sobre a saúde mental! 💜 Janeiro Branco nos convida a cuidar de nossas emoções e buscar equilíbrio. 🌱 O Janeiro Roxo, por sua vez, levanta a discussão sobre a importância de tratar as questões emocionais com empatia e compreensão. Não se esqueça de que cuidar da mente também é um ato de amor próprio!</p1> 
-                <p2 class="hashtag">#SaúdeMental #JaneiroBranco #JaneiroRoxo #Psicologia #BemEstar</p2> 
-            </div>
-            <div class="post-image">
-                <img class="post-img" src="https://baiao.pa.gov.br/wp-content/uploads/2023/01/IMG-20230105-WA0045-1078x516.jpg" alt="Imagem post">
-            </div>
-            <div class="post-info">
-                <p1 class="time/date/views"> 11:40 PM  •  07/01/2025  •  1K Views</p1>
-                <hr class="separator"> <!-- Linha horizontal separadora -->
-                <p2 class="ret/com/cur/salv"> 54 Retweets  •  32 Comentários  •  50 Curtidas  •  5 Salvamentos</p2>
-            </div>
-            <hr class="separator"> <!-- Linha horizontal separadora -->
-            <div class="actions">
-                <div class="action-item">
-                    <span class="action-icon comment-icon"><i class="far fa-comment"></i></span> <!-- Comentário -->
-                </div>
-                <div class="action-item">
-                    <i class="fas fa-retweet retweet-icon"></i>
-                </div>
-                <div class="action-item">
-                    <i class="far fa-heart like-icon"></i>
-                </div>
-                <div class="action-item">
-                    <i class="far fa-bookmark save-icon"></i>
-                </div>
-                <div class="action-item">
-                    <i class="fas fa-share share-icon"></i>
-                </div>
-            </div>
-            <div class="comment-section" style="display: none;">
-                <textarea class="comment-box" placeholder="Escreva seu comentário..."></textarea>
-                <button class="submit-comment">Comentar</button>
-            </div>
-            <div class="comments-display">
-                <!-- Os comentários aparecerão aqui -->
-            </div>
+            </section>            
         </div>
+        <div class="carousel-item">
+            <!-- Post 2 -->
+            <section id="Principal" class="principal">
+                <div class="noticia">
+                    <div class="post">
+                        <div class="post-header">
+                            <img class="avatar" src="https://i.ibb.co/4d6Hd5x/logo-rocha1.png" alt="Avatar">
+                            <div class="user-info">
+                                <span class="username">ROCHA Clínica de Psicologia ✅</span>
+                                <span class="post-arroba">@rocha_psicologia</span>
+                            </div>
+                            <i class="fas fa-ellipsis-h more-options"></i> <!-- Ícone de três pontos -->
+                        </div>
+                        <div class="post-content">
+                            <p1 class="content">🩸 Dezembro Vermelho é o mês de conscientização sobre a prevenção ao HIV/AIDS. É um momento importante para discutirmos sobre o diagnóstico precoce, o acesso ao tratamento e a importância do respeito e apoio às pessoas que vivem com HIV. Juntos, podemos eliminar o estigma e promover mais cuidado, compreensão e prevenção. Não deixe de se proteger, se informar e compartilhar essa causa! 💪❤️</p1>
+                            <p2 class="hashtag">#DezembroVermelho #HIV #AIDS #Prevenção #Conscientização #Psicologia</p2>
+                        </div>
+                        <div class="post-image">
+                            <img class="post-img" src="https://mudes.org.br/wp-content/uploads/2022/12/Capa-Blog.png" alt="Imagem post">
+                        </div>
+                        <div class="post-info">
+                            <p1 class="time/date/views"> 10:30 AM  •  01/12/2024  •  2K Views</p1>
+                            <hr class="separator"> <!-- Linha horizontal separadora -->
+                            <p2 class="ret/com/cur/salv"> 102 Retweets  •  58 Comentários  •  124 Curtidas  •  8 Salvamentos</p2>
+                        </div>
+                        <hr class="separator"> <!-- Linha horizontal separadora -->
+                        <div class="actions">
+                            <div class="action-item">
+                                <span class="action-icon comment-icon"><i class="far fa-comment"></i></span> <!-- Comentário -->
+                            </div>
+                            <div class="action-item">
+                                <i class="fas fa-retweet retweet-icon"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="far fa-heart like-icon"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="far fa-bookmark save-icon"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="fas fa-share share-icon"></i>
+                            </div>
+                        </div>
+                        <div class="comment-section" style="display: none;">
+                            <textarea class="comment-box" placeholder="Escreva seu comentário..."></textarea>
+                            <button class="submit-comment">Comentar</button>
+                        </div>
+                        <div class="comments-display">
+                            <!-- Os comentários aparecerão aqui -->
+                        </div>
+                    </div>
+                </div>
+            </section>            
+        </div>
+        <div class="carousel-item">
+            <!-- Post 3 -->
+            <section id="Principal" class="principal">
+                <div class="noticia">
+                    <div class="post">
+                        <div class="post-header">
+                            <img class="avatar" src="https://i.ibb.co/4d6Hd5x/logo-rocha1.png" alt="Avatar">
+                            <div class="user-info">
+                                <span class="username">ROCHA Clínica de Psicologia ✅</span>
+                                <span class="post-arroba">@rocha_psicologia</span>
+                            </div>
+                            <i class="fas fa-ellipsis-h more-options"></i> <!-- Ícone de três pontos -->
+                        </div>
+                        <div class="post-content">
+                            <p1 class="content">🧠 Janeiro é um mês importante para refletirmos sobre a saúde mental! 💜 Janeiro Branco nos convida a cuidar de nossas emoções e buscar equilíbrio. 🌱 O Janeiro Roxo, por sua vez, levanta a discussão sobre a importância de tratar as questões emocionais com empatia e compreensão. Não se esqueça de que cuidar da mente também é um ato de amor próprio!</p1> 
+                            <p2 class="hashtag">#SaúdeMental #JaneiroBranco #JaneiroRoxo #Psicologia #BemEstar</p2> 
+                        </div>
+                        <div class="post-image">
+                            <img class="post-img" src="https://camaradecorumbaiba.go.gov.br/wp-content/uploads/2024/01/janeiro-branco-roxo-camara-de-cbb-2024-1210x642.png" alt="Imagem post">
+                        </div>
+                        <div class="post-info">
+                            <p1 class="time/date/views"> 11:40 PM  •  07/01/2025  •  1K Views</p1>
+                            <hr class="separator"> <!-- Linha horizontal separadora -->
+                            <p2 class="ret/com/cur/salv"> 54 Retweets  •  32 Comentários  •  50 Curtidas  •  5 Salvamentos</p2>
+                        </div>
+                        <hr class="separator"> <!-- Linha horizontal separadora -->
+                        <div class="actions">
+                            <div class="action-item">
+                                <span class="action-icon comment-icon"><i class="far fa-comment"></i></span> <!-- Comentário -->
+                            </div>
+                            <div class="action-item">
+                                <i class="fas fa-retweet retweet-icon"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="far fa-heart like-icon"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="far fa-bookmark save-icon"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="fas fa-share share-icon"></i>
+                            </div>
+                        </div>
+                        <div class="comment-section" style="display: none;">
+                            <textarea class="comment-box" placeholder="Escreva seu comentário..."></textarea>
+                            <button class="submit-comment">Comentar</button>
+                        </div>
+                        <div class="comments-display">
+                            <!-- Os comentários aparecerão aqui -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <button class="carousel-arrow right-arrow">›</button>
+</div>
+
+<!-- Matérias -->
+<section id="Materias" class="materias-section">
+    <h2>Matérias Relacionadas</h2>
+    <div class="materias-container">
+        <a href="https://www.unicep.edu.br/post/decifrando-a-mente-a-jornada-fascinante-da-psicologia-humana" class="materia-link" target="_blank">
+            <div class="materia">
+                <img src="https://www.esteticare.com.br/wp-content/uploads/2023/07/mente-humana-o-que-e-e-como-funciona.jpg" alt="Imagem da Matéria 1" class="materia-img">
+                <div class="materia-content">
+                    <h3>Entendendo a Mente Humana</h3>
+                    <p>Uma introdução à psicologia cognitiva e como ela ajuda a entender os processos mentais...</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.scielo.br/j/psoc/a/yMxwVBg7f3qvCdksBFmQ4CQ/" class="materia-link" target="_blank">
+            <div class="materia">
+                <img src="https://blog.cenatcursos.com.br/wp-content/uploads/2019/01/psicologia-social.jpg" alt="Imagem da Matéria 2" class="materia-img">
+                <div class="materia-content">
+                    <h3>O que é Psicologia Social?</h3>
+                    <p>Descubra como a psicologia social estuda a influência do grupo no comportamento individual...</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.humansolutionsbrasil.com.br/artigos/psicologia-do-desenvolvimento" class="materia-link" target="_blank">
+            <div class="materia">
+                <img src="https://ead.unimar.br/wp-content/uploads/2022/06/Psicologia-do-Desenvolvimento.jpg" alt="Imagem da Matéria 3" class="materia-img">
+                <div class="materia-content">
+                    <h3>Psicologia do Desenvolvimento</h3>
+                    <p>Uma análise do desenvolvimento humano ao longo da vida, desde a infância até a velhice...</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.espacopotencial.com.br/psicoterapia-o-que-e-sua-importancia-para-quem-e-destinada/" class="materia-link" target="_blank">
+            <div class="materia sumil">
+                <img src="https://miro.medium.com/v2/resize:fit:10420/1*x5XjVUmqX37sJ0HNZc-qsw.png" alt="Imagem da Matéria 4" class="materia-img">
+                <div class="materia-content">
+                    <h3>A Importância da Psicoterapia</h3>
+                    <p>Saiba como a psicoterapia pode auxiliar na resolução de conflitos emocionais e psicológicos...</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://institutoayrtonsenna.org.br/psicologia-dentro-do-ambiente-escolar/" class="materia-link" target="_blank">
+            <div class="materia sumil">
+                <img src="https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2021/06/254-Relacao-entre-Psicologia-e-Educacao.jpg" alt="Imagem da Matéria 5" class="materia-img">
+                <div class="materia-content">
+                    <h3>Psicologia na Educação</h3>
+                    <p>Explore como a psicologia pode ser aplicada para melhorar a aprendizagem e o desenvolvimento acadêmico...</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.conexasaude.com.br/blog/psicologia-das-emocoes/" class="materia-link" target="_blank">
+            <div class="materia sumil">
+                <img src="https://painel.posuscs.com.br/assets/uploads/84/57411-banners_blog-22-.jpg" alt="Imagem da Matéria 6" class="materia-img">
+                <div class="materia-content">
+                    <h3>Psicologia das Emoções</h3>
+                    <p>Entenda o impacto das emoções nas nossas decisões e comportamentos, e como gerenciá-las...</p>
+                </div>
+            </div>
+        </a>
+        <!-- Adicione mais matérias conforme necessário -->
     </div>
 </section>
 
+<section id="Comentarios" class="comentarios-clientes">
+    <div class="comentarios-container">
+        <h2>COMENTÁRIOS</h2>
+        <div class="comentario">
+            <div class="comentario-conteudo">
+                <h3>João da Silva</h3>
+                <p class="comentario-texto">"A ROCHA Clínica me ajudou a superar desafios emocionais que eu não sabia como lidar. A equipe foi muito acolhedora e me proporcionou as ferramentas necessárias para meu bem-estar. Recomendo a todos!"</p>
+            </div>
+        </div>
+        <div class="comentario">
+            <div class="comentario-conteudo">
+                <h3>Maria Souza</h3>
+                <p class="comentario-texto">"Um ambiente de confiança, onde pude expressar minhas emoções sem julgamentos. Os profissionais são extremamente capacitados e me ajudaram a encontrar o equilíbrio que eu tanto buscava." </p>
+            </div>
+        </div>
+        <div class="comentario">
+            <div class="comentario-conteudo">
+                <h3>Ana Lima</h3>
+                <p class="comentario-texto">"A clínica me ajudou a entender melhor meus sentimentos e a lidar com situações desafiadoras. A experiência foi muito positiva e eu sou muito grata!"</p>
+            </div>
+        </div>
+        <!-- Adicione mais comentários conforme necessário -->
+    </div>
+</section>
+
+
+  
 
 <!-- Rodapé -->
 <footer>
@@ -606,112 +1079,159 @@
         menu.classList.toggle('active');
     }
 
-    // Função Curtida e Salvar
-    document.addEventListener("DOMContentLoaded", function () {
-    // Função genérica para alternar o ícone (curtir ou salvar)
-    function toggleIcon(iconSelector, likedClass, iconClass1, iconClass2) {
-        const icon = document.querySelector(iconSelector);
+    document.addEventListener("DOMContentLoaded", () => {
+  // Carrossel de Posts
+  const carousel = document.querySelector(".carousel");
+  const leftArrow = document.querySelector(".left-arrow");
+  const rightArrow = document.querySelector(".right-arrow");
+  const items = document.querySelectorAll(".carousel-item");
+  let currentIndex = items.length - 1; // Começa no último item
+  let isDragging = false;
+  let startX, currentTranslate, prevTranslate;
+  const slideWidth = carousel.offsetWidth;
 
-            if (icon) { // Verifica se o ícone existe
-                icon.addEventListener("click", function () {
-                    // Alterna a classe 'liked' ou 'saved' para mudar a cor
-                    icon.classList.toggle(likedClass);
+  // Atualiza a posição do carrossel
+  const updateCarousel = () => {
+    const offset = -currentIndex * 100; // Calcula o deslocamento
+    carousel.style.transform = `translateX(${offset}%)`;
+  };
 
-                    // Alterna entre os ícones
-                    if (icon.classList.contains(likedClass)) {
-                        icon.classList.remove(iconClass1); // Ícone vazio
-                        icon.classList.add(iconClass2);    // Ícone preenchido
-                    } else {
-                        icon.classList.remove(iconClass2); // Ícone preenchido
-                        icon.classList.add(iconClass1);    // Ícone vazio
-                    }
-                });
-            } else {
-                console.log(`Ícone ${iconSelector} não encontrado!`);
-            }
+  // Configura o carrossel na posição inicial
+  updateCarousel();
+
+  // Eventos de navegação com setas
+  leftArrow.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    updateCarousel();
+  });
+
+  rightArrow.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateCarousel();
+  });
+
+  // Eventos de deslizar no carrossel
+  carousel.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    prevTranslate = -currentIndex * slideWidth;
+  });
+
+  carousel.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diff = currentX - startX;
+    carousel.style.transform = `translateX(${prevTranslate + diff}px)`;
+  });
+
+  carousel.addEventListener("touchend", (e) => {
+    isDragging = false;
+    const movedBy = e.changedTouches[0].clientX - startX;
+
+    if (movedBy < -50) {
+      currentIndex = (currentIndex + 1) % items.length;
+    } else if (movedBy > 50) {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+    }
+
+    updateCarousel();
+  });
+
+  // Função de curtir e salvar
+  function toggleIcon(iconSelector, likedClass, iconClass1, iconClass2) {
+    const icons = document.querySelectorAll(iconSelector);
+    icons.forEach(icon => {
+      icon.addEventListener("click", () => {
+        icon.classList.toggle(likedClass);
+        if (icon.classList.contains(likedClass)) {
+          icon.classList.remove(iconClass1);
+          icon.classList.add(iconClass2);
+        } else {
+          icon.classList.remove(iconClass2);
+          icon.classList.add(iconClass1);
         }
-
-        // Funções para diferentes ícones
-        toggleIcon(".like-icon", "liked", "far", "fas");
-        toggleIcon(".save-icon", "saved", "far", "fas");
-
-        // Para os ícones de retweet e share, se não for necessário alternar entre "far" e "fas"
-        const retweetIcon = document.querySelector(".retweet-icon");
-        if (retweetIcon) {
-            retweetIcon.addEventListener("click", function () {
-                retweetIcon.classList.toggle("retweeted");
-            });
-        }
-
-        const shareIcon = document.querySelector(".share-icon");
-        if (shareIcon) {
-            shareIcon.addEventListener("click", function () {
-                shareIcon.classList.toggle("shared");
-            });
-        }
+      });
     });
+  }
 
-    // Função Comentário
-    document.addEventListener("DOMContentLoaded", function () {
-    const commentIcon = document.querySelector(".comment-icon");
-    const commentSection = document.querySelector(".comment-section");
-    const commentBox = document.querySelector(".comment-box");
-    const submitCommentButton = document.querySelector(".submit-comment");
-    const commentsDisplay = document.querySelector(".comments-display");
+  toggleIcon(".like-icon", "liked", "far", "fas");
+  toggleIcon(".save-icon", "saved", "far", "fas");
 
-    // Mostra ou oculta a seção de comentário
-    commentIcon.addEventListener("click", function () {
-        commentSection.style.display =
-            commentSection.style.display === "none" || commentSection.style.display === ""
-                ? "flex"
-                : "none";
+  // Função de retweet
+  const retweetIcons = document.querySelectorAll(".retweet-icon");
+  retweetIcons.forEach(retweetIcon => {
+    retweetIcon.addEventListener("click", () => {
+      retweetIcon.classList.toggle("retweeted");
     });
+  });
 
-        // Adiciona um comentário ao clicar no botão "Comentar"
-        submitCommentButton.addEventListener("click", function () {
-            const commentText = commentBox.value.trim(); // Obtém o texto do comentário
-            
-            if (commentText !== "") {
-                // Cria a estrutura do comentário
-                const commentItem = document.createElement("div");
-                commentItem.className = "comment-item";
-
-                const avatar = document.createElement("div");
-                avatar.className = "comment-avatar";
-
-                const content = document.createElement("div");
-                content.className = "comment-content";
-
-                const username = document.createElement("span");
-                username.className = "comment-username";
-                username.textContent = "Cliente ROCHA Psicólogo";
-
-                const arroba = document.createElement("span");
-                arroba.className = "comment-arroba";
-                arroba.textContent = "@Cliente";
-
-                const text = document.createElement("p");
-                text.className = "comment-text";
-                text.textContent = commentText;
-
-                // Adiciona os elementos ao container do comentário
-                content.appendChild(username);
-                content.appendChild(arroba);
-                content.appendChild(text);
-                commentItem.appendChild(avatar);
-                commentItem.appendChild(content);
-
-                // Adiciona o comentário à lista de comentários
-                commentsDisplay.appendChild(commentItem);
-
-                // Limpa a caixa de comentário e fecha a seção
-                commentBox.value = "";
-                commentSection.style.display = "none";
-            } else {
-                alert("Por favor, escreva algo antes de comentar.");
-            }
-        });
+  // Função de compartilhar
+  const shareIcons = document.querySelectorAll(".share-icon");
+  shareIcons.forEach(shareIcon => {
+    shareIcon.addEventListener("click", () => {
+      shareIcon.classList.toggle("shared");
     });
+  });
+
+  // Função de comentários
+  const commentIcons = document.querySelectorAll(".comment-icon");
+  commentIcons.forEach(commentIcon => {
+    commentIcon.addEventListener("click", () => {
+      const commentSection = commentIcon.closest(".carousel-item").querySelector(".comment-section");
+      commentSection.style.display =
+        commentSection.style.display === "none" || commentSection.style.display === ""
+          ? "flex"
+          : "none";
+    });
+  });
+
+  // Envio de comentários
+  const submitCommentButtons = document.querySelectorAll(".submit-comment");
+  submitCommentButtons.forEach(submitCommentButton => {
+    submitCommentButton.addEventListener("click", () => {
+      const post = submitCommentButton.closest(".carousel-item");
+      const commentBox = post.querySelector(".comment-box");
+      const commentsDisplay = post.querySelector(".comments-display");
+      const commentText = commentBox.value.trim();
+
+      if (commentText !== "") {
+        const commentItem = document.createElement("div");
+        commentItem.className = "comment-item";
+
+        const avatar = document.createElement("div");
+        avatar.className = "comment-avatar";
+
+        const content = document.createElement("div");
+        content.className = "comment-content";
+
+        const username = document.createElement("span");
+        username.className = "comment-username";
+        username.textContent = "Cliente ROCHA Psicólogo";
+
+        const arroba = document.createElement("span");
+        arroba.className = "comment-arroba";
+        arroba.textContent = "@Cliente";
+
+        const text = document.createElement("p");
+        text.className = "comment-text";
+        text.textContent = commentText;
+
+        content.appendChild(username);
+        content.appendChild(arroba);
+        content.appendChild(text);
+        commentItem.appendChild(avatar);
+        commentItem.appendChild(content);
+
+        commentsDisplay.appendChild(commentItem);
+        commentBox.value = "";
+        const commentSection = post.querySelector(".comment-section");
+        commentSection.style.display = "none";
+      } else {
+        alert("Por favor, escreva algo antes de comentar.");
+      }
+    });
+  });
+});
 
 
 </script>
