@@ -182,6 +182,32 @@
             }
 
         /* Container Principal */
+
+        .agendamento-title {
+                font-family: "Oswald", serif;
+                font-weight: bold;
+                margin-bottom: 2rem;
+                font-size: 2.5rem;
+                color: #004848;
+                letter-spacing: 2px; 
+                position: relative;
+                text-transform: uppercase;
+                background: linear-gradient(90deg, #267066, #004848);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .agendamento-title::after {
+                content: "";
+                width: 20%;
+                height: 4px;
+                background-color: #267066;
+                display: block;
+                margin: 10px auto 0 auto;
+                border-radius: 2px;
+                animation: expand-line 1s ease-in-out forwards;
+            }
+            
         .principal {
             font-family: 'Arial', sans-serif;
             padding: 20px;
@@ -190,6 +216,7 @@
             border-radius: 15px;
             box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
         }
+
 
             .carousel-container {
                 position: relative;
@@ -638,6 +665,267 @@
                 text-align: left;
             }
 
+        /* Estilo do Título "Sobre Mim" */
+        .sobre-title {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+            .sobre-title h1 {
+                font-family: "Oswald", serif;
+                font-size: 2.5rem;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 2rem;
+                color: #333; /* Cor principal */
+                text-transform: uppercase;
+                letter-spacing: 2px; /* Espaçamento entre letras */
+                position: relative;
+                display: inline-block;
+                background: linear-gradient(90deg, #bde4df, #75e6e6);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            /* Linha decorativa abaixo do título */
+            .sobre-title h1::after {
+                content: "";
+                position: absolute;
+                width: 600%; /* Ajuste proporcional ao título */
+                max-width: 1000px; /* Limite de largura em telas grandes */
+                height: 4px;
+                background: linear-gradient(90deg, #bde4df, #75e6e6);
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%); /* Centraliza a linha */
+                border-radius: 2px;
+                transition: width 0.3s ease;
+            }
+
+
+        /* Seção Sobre Mim */
+        .sobre-mim {
+            grid-auto-columns: auto;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem;
+            background-color: #004848;
+        }
+
+            .sobre-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: #fff;
+                padding: 2rem;
+                border-radius: 10px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+                max-width: 1200px;
+                width: 100%;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .sobre-container:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            }
+
+        /* Estilo da Foto */
+        .foto-container {
+            margin-bottom: 1.5rem;
+        }
+
+            .foto-sobre {
+                width: 500px;
+                height: 700px;
+                border-radius: 16px;
+                object-fit: cover;
+                border: 5px solid #267066;
+                transition: transform 0.3s ease;
+            }
+
+            .foto-sobre:hover {
+                transform: scale(1.05);
+            }
+
+        /* Nome do Psicólogo */
+        .nome-psicologo {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            color: #004848;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Descrição */
+        .descricao-sobre {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.1rem;
+            color: #333;
+            text-align: center;
+            line-height: 1.6;
+            padding: 0 1rem;
+        }
+
+        /* Agendamento */
+        .agendamento-section {
+            padding: 60px 20px;
+            background-color: #f4f9f9;
+            text-align: center;
+        }
+
+            .agendamento-title {
+                font-family: "Oswald", serif;
+                font-weight: bold;
+                margin-bottom: 2rem;
+                font-size: 2.5rem;
+                color: #004848;
+                letter-spacing: 2px; 
+                position: relative;
+                text-transform: uppercase;
+                background: linear-gradient(90deg, #267066, #004848);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .agendamento-title::after {
+                content: "";
+                width: 20%;
+                height: 4px;
+                background-color: #267066;
+                display: block;
+                margin: 10px auto 0 auto;
+                border-radius: 2px;
+                animation: expand-line 1s ease-in-out forwards;
+            }
+
+        @keyframes expand-line {
+            from { width: 0; }
+            to { width: 20%; }
+        }
+
+            .agendamento-descricao {
+                font-size: 1.2rem;
+                color: #555;
+                margin-bottom: 30px;
+            }
+
+            .calendario-container {
+                display: inline-block;
+                background-color: #195248;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                animation: fadeInUp 1s ease-in-out;
+            }
+
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .calendario-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center !important;
+                margin-bottom: 10px;
+                text-shadow: 1px 1px 4px #000000a4;
+            }
+
+        .btn-prev, .btn-next {
+            background-color: #267066;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+            text-shadow: 1px 1px 4px #000000a4;
+        }
+
+        .btn-prev:hover, .btn-next:hover {
+            background-color: #004848;
+        }
+
+        .calendario th, .calendario td {
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            vertical-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-shadow: 1px 1px 4px #000000a4;
+        }
+
+        .calendario td:hover {
+            background-color: #bde4df;
+            border-radius: 50%;
+        }
+
+        .btn-agendar {
+            margin-top: 20px;
+            background-color: #267066;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-shadow: 1px 1px 4px #000000a4;
+        }
+
+        .btn-agendar:hover {
+            background-color: #004848;
+            transform: scale(1.05);
+        }
+
+        .horarios-container {
+        margin-top: 20px;
+        text-shadow: 1px 1px 4px #000000a4;
+        }
+
+        .horarios-container {
+            margin-top: 20px;
+            }
+
+            .horario {
+                display: inline-block;
+                margin: 5px;
+                padding: 10px 15px;
+                background-color: #267066;
+                color: #fff;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.3s;
+            }
+
+            .horario:hover {
+                background-color: #004848;
+                transform: scale(1.1);
+            }
+
+            .horario.selecionado {
+                background-color: #004848;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+
+            td {
+                padding: 10px;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            td:hover {
+                background-color: #e0f7fa;
+            }
+
+            td.selecionado {
+                background-color: #267066;
+                color: #fff;
+                border-radius: 50%;
+            }
 
         footer {
             background-color: #267066;
@@ -775,7 +1063,50 @@
             .comentario-texto {
                 font-size: 0.9rem;
             }
-        
+
+            .sobre-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .sobre-title h1::after {
+                width: 150%; /* Aumenta a linha em telas menores */
+            }
+
+            .foto-sobre {
+                max-width: 100%;
+                height: 100%;
+            }
+
+            .foto-container {
+                margin-bottom: 0;
+            }
+
+            .descricao-container {
+                text-align: left;
+            }
+
+            .agendamento-title::after {
+                width: 90%;
+            }
+
+        @keyframes expand-line {
+            from { width: 0; }
+            to { width: 90%; }
+        }
+
+            .agendamento-title {
+                font-size: 2rem;
+            }
+
+            .disponibilidade-horarios {
+                flex-direction: column;
+                align-items: center;
+            }
+            .dia {
+                width: 100%;
+                max-width: 300px;
+            }
 
             .sumil {
                 display: none;
@@ -829,8 +1160,8 @@
         <li><a href="#Principal">Principal</a></li>
         <li><a href="#Materias">Matérias</a></li>
         <li><a href="#comentarios">Comentários</a></li>
-        <li><a href="#contato">Sobre mim</a></li>
-        <li><a href="#contato">Agendamento</a></li>
+        <li><a href="#sobre-mim">Sobre mim</a></li>
+        <li><a href="#agendamento">Agendamento</a></li>
     </ul>
 </nav>
 
@@ -1137,6 +1468,60 @@
 </section>
 
 
+<!-- Seção com o nome do psicólogo e a foto -->
+<section id="sobre-mim" class="sobre-mim">
+    <div class="sobre-title">
+      <h1>Sobre Mim</h1>  
+    </div>
+    <div class="sobre-container">
+        <div class="foto-container">
+            <img src="https://scontent.fcac2-1.fna.fbcdn.net/v/t39.30808-6/387739971_665000815610181_547182445469695939_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHWVsgylmmpsy3NsU5-0epA3OhCwh-D20Pc6ELCH4PbQ_28-nPU2xzgE4viyJHlBUIY03_qqXtw5oCncE-92CsK&_nc_ohc=XqZBg7HZbS8Q7kNvgFV00R1&_nc_oc=Adht4uBHZvOMAaClR-Qna-qH3Wt-CwRejxrVdVgghL6jpjZX9EUxm_39TOKAljD27wU&_nc_zt=23&_nc_ht=scontent.fcac2-1.fna&_nc_gid=AdOYS5VUs1sDnXb40Svu4eM&oh=00_AYBcibmrxJBN6r-MEEyLVRNYh_dX2c7ypSJcbAPXHyQtbQ&oe=67862112" alt="Foto do Psicólogo" class="foto-sobre">
+        </div>
+        <div class="descricao-container">
+            <h2 class="nome-psicologo">Dr. Gilberto Moreira ROCHA</h2>
+            <p class="descricao-sobre">
+                Psicólogo Clínico | CRP 08/22963 <br><br>
+                Especialista em saúde mental, com foco no cuidado emocional e desenvolvimento pessoal. Minha missão é proporcionar acolhimento e suporte psicológico para uma vida mais leve e equilibrada. 💙
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de Agendamento -->
+<section id="agendamento" class="agendamento-section">
+    <div class="agendamento-container">
+        <h2 class="agendamento-title">AGENDE SUA CONSULTA</h2>
+        <p class="agendamento-descricao">Escolha o melhor horário e agende sua consulta com facilidade.</p>
+        <div class="calendario-container">
+            <div class="calendario-header">
+                <button class="btn-prev" onclick="mudarMes(-1)">&#9664;</button>
+                <h3 id="mes-ano"></h3>
+                <button class="btn-next" onclick="mudarMes(1)">&#9654;</button>
+            </div>
+            <table class="calendario">
+                <thead>
+                    <tr>
+                        <th>Dom</th>
+                        <th>Seg</th>
+                        <th>Ter</th>
+                        <th>Qua</th>
+                        <th>Qui</th>
+                        <th>Sex</th>
+                        <th>Sáb</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-calendario"></tbody>
+            </table>
+        </div>
+        <div class="horarios-container">
+            <div id="horarios-disponiveis"></div>
+        </div>
+        <div>
+           <button id="btn-agendar" class="btn-agendar" onclick="agendarHorario()">Agendar pelo WhatsApp</button> 
+        </div>
+        
+    </div>
+</section>
   
 
 <!-- Rodapé -->
@@ -1306,7 +1691,79 @@
   });
 });
 
+    // Calendário agendamento
+    const horariosDisponiveis = ["08:00","09:00", "10:00", "11:00", "14:00", "15:00", "16:00", "17:00"];
+const horariosContainer = document.getElementById("horarios-disponiveis");
+const corpoCalendario = document.getElementById("corpo-calendario");
+const mesAno = document.getElementById("mes-ano");
+let horarioSelecionado = "";
+let diaSelecionado = "";
+let dataAtual = new Date();
 
+function formatarData(diaOuMes) {
+    return diaOuMes < 10 ? `0${diaOuMes}` : diaOuMes;
+}
+
+function gerarCalendario(mes, ano) {
+    corpoCalendario.innerHTML = "";
+    const primeiroDia = new Date(ano, mes).getDay();
+    const diasNoMes = new Date(ano, mes + 1, 0).getDate();
+    mesAno.textContent = `${dataAtual.toLocaleString('default', { month: 'long' })} ${ano}`;
+    let linha = document.createElement("tr");
+
+    for (let i = 0; i < primeiroDia; i++) {
+        linha.appendChild(document.createElement("td"));
+    }
+
+    for (let dia = 1; dia <= diasNoMes; dia++) {
+        if ((primeiroDia + dia - 1) % 7 === 0) {
+            corpoCalendario.appendChild(linha);
+            linha = document.createElement("tr");
+        }
+        const celula = document.createElement("td");
+        celula.textContent = dia;
+        celula.onclick = () => selecionarDia(dia, mes, ano, celula);
+        linha.appendChild(celula);
+    }
+    corpoCalendario.appendChild(linha);
+}
+
+function mudarMes(direcao) {
+    dataAtual.setMonth(dataAtual.getMonth() + direcao);
+    gerarCalendario(dataAtual.getMonth(), dataAtual.getFullYear());
+}
+
+function selecionarDia(dia, mes, ano, celula) {
+    diaSelecionado = `${formatarData(dia)}/${formatarData(mes + 1)}/${ano}`;
+    document.querySelectorAll('td').forEach(td => td.classList.remove('selecionado'));
+    celula.classList.add('selecionado');
+    horariosContainer.innerHTML = "";
+    horariosDisponiveis.forEach(horario => {
+        const btnHorario = document.createElement("div");
+        btnHorario.textContent = horario;
+        btnHorario.classList.add("horario");
+        btnHorario.onclick = () => selecionarHorario(horario);
+        horariosContainer.appendChild(btnHorario);
+    });
+}
+
+function selecionarHorario(horario) {
+    horarioSelecionado = horario;
+    document.querySelectorAll('.horario').forEach(h => h.classList.remove('selecionado'));
+    event.target.classList.add('selecionado');
+}
+
+function agendarHorario() {
+    if (diaSelecionado && horarioSelecionado) {
+        const mensagem = `Olá! Gostaria de marcar um horário no dia ${diaSelecionado} às ${horarioSelecionado}.`;
+        const linkWhatsApp = `https://wa.me/554598352369?text=${encodeURIComponent(mensagem)}`;
+        window.open(linkWhatsApp, '_blank');
+    } else {
+        alert("Por favor, selecione o dia e o horário.");
+    }
+}
+
+gerarCalendario(dataAtual.getMonth(), dataAtual.getFullYear());
 </script>
 
 </body>
