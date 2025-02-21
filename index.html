@@ -795,9 +795,11 @@
             font-family: 'Open Sans', sans-serif;
             font-size: 1.1rem;
             color: #333;
-            text-align: center;
+            text-align: justify; /* Alinha o texto ao centro */
             line-height: 1.6;
             padding: 0 1rem;
+            max-width: 90%;
+            margin: 0 auto; /* Centraliza o container */
         }
 
             #agendamento h2 {
@@ -1073,6 +1075,11 @@
             .descricao-container {
                 text-align: left;
             }
+            .descricao-sobre {
+                max-width: 150%;
+                font-size: 1rem;
+                line-height: 1.2;
+            }
 
         @keyframes expand-line {
             from { width: 0; }
@@ -1107,7 +1114,6 @@
             }
 
         }
-
 
         /* Animação de rolagem suave */
         html {
@@ -1332,71 +1338,139 @@
                 </div>
             </section>
         </div>
+        <div class="carousel-item">
+            <!-- Post 4 - Fevereiro -->
+            <section class="principal">
+                <div class="noticia">
+                    <div class="post">
+                        <div class="post-header">
+                            <img class="avatar" src="https://i.ibb.co/4d6Hd5x/logo-rocha1.png" alt="Avatar">
+                            <div class="user-info">
+                                <span class="username">ROCHA Clínica de Psicologia ✅</span>
+                                <span class="post-arroba">@rocha_psicologia</span>
+                            </div>
+                            <i class="fas fa-ellipsis-h more-options"></i>
+                        </div>
+                        <div class="post-content">
+                            <p1 class="content">
+                                🌸 Fevereiro traz uma energia renovadora! Com o roxo representando a sabedoria e o laranja a vitalidade, este mês é uma oportunidade para refletir, criar e cuidar da saúde mental. Aproveite essa mistura única de cores para transformar desafios em novas perspectivas.
+                            </p1>
+                            <p2 class="hashtag">#FevereiroRoxoLaranja #SaúdeMental #Criatividade #Renovação</p2>
+                        </div>
+                        <div class="post-image">
+                            <img class="post-img" src="https://www.tcepi.tc.br/wp-content/uploads/2023/02/505f1857-1d76-4744-8051-01e85ef3f819.jpg" alt="Imagem post">
+                        </div>
+                        <div class="post-info">
+                            <p1 class="time/date/views">09:00 AM  •  14/02/2025  •  800 Views</p1>
+                            <hr class="separator">
+                            <p2 class="ret/com/cur/salv">30 Retweets  •  15 Comentários  •  70 Curtidas  •  5 Salvamentos</p2>
+                        </div>
+                        <hr class="separator">
+                        <div class="actions">
+                            <div class="action-item">
+                                <span class="action-icon comment-icon"><i class="far fa-comment"></i></span>
+                            </div>
+                            <div class="action-item">
+                                <i class="fas fa-retweet retweet-icon"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="far fa-heart like-icon"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="far fa-bookmark save-icon"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="fas fa-share share-icon"></i>
+                            </div>
+                        </div>
+                        <div class="comment-section" style="display: none;">
+                            <textarea class="comment-box" placeholder="Escreva seu comentário..."></textarea>
+                            <button class="submit-comment">Comentar</button>
+                        </div>
+                        <div class="comments-display">
+                            <!-- Os comentários aparecerão aqui -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> 
     </div>
     <button class="carousel-arrow right-arrow">›</button>
 </div>
 
 <!-- Matérias -->
 <section id="Materias" class="materias-section">
-    <h2>Matérias Relacionadas</h2>
+    <h2>Matérias Comentadas em Psicologia</h2>
     <div class="materias-container">
-        <a href="https://www.unicep.edu.br/post/decifrando-a-mente-a-jornada-fascinante-da-psicologia-humana" class="materia-link" target="_blank">
-            <div class="materia">
-                <img src="https://www.esteticare.com.br/wp-content/uploads/2023/07/mente-humana-o-que-e-e-como-funciona.jpg" alt="Imagem da Matéria 1" class="materia-img">
-                <div class="materia-content">
-                    <h3>Entendendo a Mente Humana</h3>
-                    <p>Uma introdução à psicologia cognitiva e como ela ajuda a entender os processos mentais...</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://www.scielo.br/j/psoc/a/yMxwVBg7f3qvCdksBFmQ4CQ/" class="materia-link" target="_blank">
-            <div class="materia">
-                <img src="https://blog.cenatcursos.com.br/wp-content/uploads/2019/01/psicologia-social.jpg" alt="Imagem da Matéria 2" class="materia-img">
-                <div class="materia-content">
-                    <h3>O que é Psicologia Social?</h3>
-                    <p>Descubra como a psicologia social estuda a influência do grupo no comportamento individual...</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://www.humansolutionsbrasil.com.br/artigos/psicologia-do-desenvolvimento" class="materia-link" target="_blank">
-            <div class="materia">
-                <img src="https://ead.unimar.br/wp-content/uploads/2022/06/Psicologia-do-Desenvolvimento.jpg" alt="Imagem da Matéria 3" class="materia-img">
-                <div class="materia-content">
-                    <h3>Psicologia do Desenvolvimento</h3>
-                    <p>Uma análise do desenvolvimento humano ao longo da vida, desde a infância até a velhice...</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://www.espacopotencial.com.br/psicoterapia-o-que-e-sua-importancia-para-quem-e-destinada/" class="materia-link" target="_blank">
-            <div class="materia sumil">
-                <img src="https://miro.medium.com/v2/resize:fit:10420/1*x5XjVUmqX37sJ0HNZc-qsw.png" alt="Imagem da Matéria 4" class="materia-img">
-                <div class="materia-content">
-                    <h3>A Importância da Psicoterapia</h3>
-                    <p>Saiba como a psicoterapia pode auxiliar na resolução de conflitos emocionais e psicológicos...</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://institutoayrtonsenna.org.br/psicologia-dentro-do-ambiente-escolar/" class="materia-link" target="_blank">
-            <div class="materia sumil">
-                <img src="https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2021/06/254-Relacao-entre-Psicologia-e-Educacao.jpg" alt="Imagem da Matéria 5" class="materia-img">
-                <div class="materia-content">
-                    <h3>Psicologia na Educação</h3>
-                    <p>Explore como a psicologia pode ser aplicada para melhorar a aprendizagem e o desenvolvimento acadêmico...</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://www.conexasaude.com.br/blog/psicologia-das-emocoes/" class="materia-link" target="_blank">
-            <div class="materia sumil">
-                <img src="https://painel.posuscs.com.br/assets/uploads/84/57411-banners_blog-22-.jpg" alt="Imagem da Matéria 6" class="materia-img">
-                <div class="materia-content">
-                    <h3>Psicologia das Emoções</h3>
-                    <p>Entenda o impacto das emoções nas nossas decisões e comportamentos, e como gerenciá-las...</p>
-                </div>
-            </div>
-        </a>
-        <!-- Adicione mais matérias conforme necessário -->
+      <!-- Card 1: Resiliência em Tempos de Crise -->
+      <a href="https://www.scielo.br/j/se/a/s5LbhYwxJ9ndMcFpZPXLpBq/?lang=pt" class="materia-link" target="_blank">
+        <div class="materia">
+          <!-- Imagem: pessoa meditando ao ar livre, simbolizando resiliência e equilíbrio emocional -->
+          <img src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Resiliência em Tempos de Crise" class="materia-img">
+          <div class="materia-content">
+            <h3>Resiliência em Tempos de Crise</h3>
+            <p>Exploração de estratégias para manter a resiliência durante períodos desafiadores, como o isolamento social.</p>
+          </div>
+        </div>
+      </a>
+      <!-- Card 2: Inovações em Psicologia Escolar Crítica -->
+      <a href="https://www.scielo.br/j/estpsi/a/b6GMzyhCtHZthBC4PkrhLNx/?lang=pt" class="materia-link" target="_blank">
+        <div class="materia">
+          <!-- Imagem: sala de aula moderna com tecnologia e interação -->
+          <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Inovações em Psicologia Escolar Crítica" class="materia-img">
+          <div class="materia-content">
+            <h3>Inovações em Psicologia Escolar Crítica</h3>
+            <p>Análise dos desafios e avanços na atuação do psicólogo escolar, enfatizando a melhoria da qualidade educacional.</p>
+          </div>
+        </div>
+      </a>
+      <!-- Card 3: Avanços em Neuropsicologia -->
+      <a href="https://www.scielo.br/j/prc/a/BGz56brWYVBX6RdK7qdxpxb/?lang=pt" class="materia-link" target="_blank">
+        <div class="materia">
+          <!-- Imagem: representação artística de conexões neurais -->
+          <img src="https://images.pexels.com/photos/356133/pexels-photo-356133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Avanços em Neuropsicologia" class="materia-img">
+          <div class="materia-content">
+            <h3>Avanços em Neuropsicologia</h3>
+            <p>Compilação de estudos recentes que exploram as relações entre estruturas cerebrais e funções cognitivas.</p>
+          </div>
+        </div>
+      </a>
+      <!-- Card 4: Psicologia Organizacional e Bem-estar no Trabalho -->
+      <a href="https://www.scielo.br/j/pcp/a/NKwfC9mJtLnYGZqc8wCF6mG/?format=pdf" class="materia-link" target="_blank">
+        <div class="materia">
+          <!-- Imagem: ambiente de escritório moderno com pessoas colaborando -->
+          <img src="https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Psicologia Organizacional e Bem-estar no Trabalho" class="materia-img">
+          <div class="materia-content">
+            <h3>Psicologia Organizacional e Bem-estar no Trabalho</h3>
+            <p>Exploração de como a psicologia do trabalho aplica ferramentas para melhorar o desempenho e a comunicação interna.</p>
+          </div>
+        </div>
+      </a>
+      <!-- Card 5: Cultura e Saúde Mental -->
+      <a href="https://www.scielo.br/j/hcsm/a/FBgWRdBb85bywqLbLYh3HnF" class="materia-link" target="_blank">
+        <div class="materia">
+          <!-- Imagem: mosaico cultural ou cenas que representem diversidade cultural -->
+          <img src="https://images.pexels.com/photos/261909/pexels-photo-261909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Cultura e Saúde Mental" class="materia-img">
+          <div class="materia-content">
+            <h3>Cultura e Saúde Mental</h3>
+            <p>Discussão sobre como atividades culturais podem ser aliadas no combate ao esgotamento mental.</p>
+          </div>
+        </div>
+      </a>
+      <!-- Card 6: Inovações Terapêuticas -->
+      <a href="https://www.scielo.br/j/csp/a/QsjmnTkHn3RCBZH9R4WPRfd/?format=pdf" class="materia-link" target="_blank">
+        <div class="materia">
+          <!-- Imagem: sessão terapêutica moderna, com ambiente acolhedor -->
+          <img src="https://images.pexels.com/photos/3755761/pexels-photo-3755761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Inovações Terapêuticas" class="materia-img">
+          <div class="materia-content">
+            <h3>Inovações Terapêuticas</h3>
+            <p>Exame das principais inovações no campo terapêutico, incluindo medicina de precisão e inteligência artificial.</p>
+          </div>
+        </div>
+      </a>
     </div>
-</section>
+  </section>
+  
 
 <section id="comentarios" class="comentarios-container">
     <h2>COMENTÁRIOS</h2>
@@ -1513,24 +1587,29 @@
 </section>
 
 
-<!-- Seção com o nome do psicólogo e a foto -->
 <section id="sobre-mim" class="sobre-mim">
     <div class="sobre-title">
-      <h1>Sobre Mim</h1>  
+      <h1>Sobre Mim</h1>
     </div>
     <div class="sobre-container">
-        <div class="foto-container">
-            <img src="https://i.ibb.co/kgxrmzVT/imagem-2025-01-31-104036724.png" alt="Foto do Psicólogo" class="foto-sobre">
-        </div>
-        <div class="descricao-container">
-            <h2 class="nome-psicologo">Gilberto Moreira ROCHA</h2>
-            <p class="descricao-sobre">
-                Psicólogo Clínico | CRP 08/22963 <br><br>
-                Especialista em saúde mental, com foco no cuidado emocional e desenvolvimento pessoal. Minha missão é proporcionar acolhimento e suporte psicológico para uma vida mais leve e equilibrada. 💙
-            </p>
-        </div>
+      <div class="foto-container">
+        <img src="https://i.ibb.co/kgxrmzVT/imagem-2025-01-31-104036724.png" alt="Foto do Psicólogo" class="foto-sobre">
+      </div>
+      <div class="descricao-container">
+        <h2 class="nome-psicologo">Gilberto Moreira Rocha</h2>
+        <p class="descricao-sobre">
+          Olá, sou Gilberto Moreira Rocha, Psicólogo Clínico (CRP 08/22963) formado pela PUCPR. Minha missão é oferecer um espaço seguro para que você explore seus sentimentos e supere desafios, promovendo uma vida mais equilibrada.
+        </p>
+        <p class="descricao-sobre">
+          Valorizo o autoconhecimento, a empatia e a escuta ativa como ferramentas essenciais para a transformação pessoal. Estou sempre em busca de atualização profissional, participando de cursos e eventos na área da saúde mental.
+        </p>
+        <p class="descricao-sobre">
+          Se você busca apoio para enfrentar momentos difíceis ou deseja aprimorar seu bem-estar emocional, estou aqui para ajudar.
+        </p>
+      </div>
     </div>
-</section>
+  </section>
+  
 
 
 <!-- Seção agendamento -->
